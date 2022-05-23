@@ -1,41 +1,35 @@
-# forntend-mentor-challege-20
+# frontend-mentor-challenge-20
 
-This template should help get you started developing with Vue 3 in Vite.
+frontend-mentor-challenge the link https://abubakr404.github.io/frontend-mentor-challenge-20/
 
-## Recommended IDE Setup
+# Frontend Mentor - Tip calculator app solution
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.vscode-typescript-vue-plugin).
+This is a solution to the [Tip calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Customize configuration
+## Table of contents
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [Author](#author)
 
-## Project Setup
+## Overview
 
-```sh
-npm install
-```
+### The challenge
 
-### Compile and Hot-Reload for Development
+Users should be able to:
 
-```sh
-npm run dev
-```
+- See hover states for interactive elements
 
-### Compile and Minify for Production
+### Screenshot
 
-```sh
-npm run build
-```
+![](./public/images/iscreenshot.jpg)
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+### Links
 
-```sh
-npm run test:unit
-```
+- Live Site URL: [live site URL here](https://abubakr404.github.io/frontend-mentor-challenge-20/)
 
-### Lint with [ESLint](https://eslint.org/)
+## Author
 
-```sh
-npm run lint
-```
+- Frontend Mentor - [@abubakr404](https://www.frontendmentor.io/profile/abubakr404)
