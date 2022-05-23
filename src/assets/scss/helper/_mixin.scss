@@ -1,0 +1,43 @@
+// mixin fCenter is mixin for make the selector flex and make content center
+
+@mixin fCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// mixin radiBox is mixin make the first element has radius border in two side and the last element
+// has two radius border in opsiet side
+// the prameter $radius for the value of the radius and the prameter $dirction for the dirction of box
+// vertecl or horizentl
+
+@mixin radiBox($radius, $dirction: true) {
+  &:first-of-type {
+    border-radius: if($dirction, $radius 0 0 $radius, $radius $radius 0 0);
+  }
+  &:last-of-type {
+    border-radius: if($dirction, 0 $radius $radius 0, 0 0 $radius $radius);
+  }
+}
+
+// mixin responMedia is mixin for control responsive wirh screens
+
+@mixin responMedia($madia) {
+  @if $madia == mobile {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if $madia == small {
+    @media (min-width: 768px) and (max-width: 991px) {
+      @content;
+    }
+  } @else if $madia == medium {
+    @media (min-width: 992px) and (max-width: 1199px) {
+      @content;
+    }
+  } @else if $madia == large {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+}

@@ -1,0 +1,198 @@
+%backgroundImage {
+  background: {
+    repeat: no-repeat;
+    position: 1rem center;
+  }
+}
+%transition {
+  transition: all 0.3s;
+}
+%changeStyle {
+  color: $colorTextAlt;
+  outline-color: $darkCyan;
+  &:focus-visible,
+  &:hover {
+    background-color: hsl(172, 63%, 77%);
+    color: $darkCyan;
+    opacity: 1;
+  }
+  &:focus {
+    background-color: $strongCyan;
+    color: $darkCyan;
+  }
+}
+%columnSpace {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+:root {
+  @include responMedia(mobile) {
+    font-size: 12px;
+  }
+}
+body {
+  display: flex;
+  place-items: center;
+  > div {
+    padding: 4rem 0;
+    @include responMedia(mobile) {
+      padding: 4rem 0 0;
+    }
+    @include responMedia(medium) {
+      max-width: 1080px;
+    }
+    @include responMedia(large) {
+      max-width: 1280px;
+    }
+    margin: 0 auto;
+    position: relative;
+    flex-grow: 1;
+  }
+}
+
+.logo {
+  display: block;
+  margin: 0 auto 4rem;
+}
+form.calculator {
+  background-color: $white;
+  border-radius: $radius;
+  padding: 1.5rem;
+  width: 80%;
+  @include responMedia(small) {
+    width: 90%;
+  }
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  @include responMedia(mobile) {
+    width: 100%;
+    grid-template-columns: 1fr;
+    border-radius: $radius $radius 0 0;
+  }
+  fieldset {
+    border: none;
+    padding: 0;
+  }
+  & fieldset.select-tip {
+    @extend %columnSpace;
+    gap: 1rem;
+    padding: 1.5rem 0;
+  }
+  > fieldset {
+    &.output {
+      background-color: $darkCyan;
+      border-radius: $radius/1.3;
+      padding: 2em;
+    }
+    @extend %columnSpace;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .results-container {
+    height: 50%;
+    @extend %columnSpace;
+  }
+  label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.2rem;
+    p {
+      span {
+        display: inline-flex;
+        color: $grayishCyan;
+      }
+      color: $colorTextAlt;
+    }
+    p.warning {
+      font-size: inherit;
+      display: inline-block;
+      color: $colorWornings;
+    }
+  }
+  input {
+    width: 100%;
+    text-align: end;
+    font-family: inherit;
+    color: $darkCyan;
+    font-size: 1.5em;
+    border: none;
+    border-radius: $radius/4;
+    padding: 0.5rem 1rem;
+    @extend %transition;
+    &[type="reset"],
+    &[type="button"] {
+      text-align: center;
+    }
+    &[type="number"] {
+      &::placeholder {
+        color: $grayishCyan;
+      }
+      &.custom-tip::placeholder {
+        color: $darkGrayishCyan;
+      }
+      caret-color: $strongCyan;
+      background-color: $veryLightGrayishCyan;
+      outline-color: $strongCyan;
+      & {
+        -webkit-appearance: textfield;
+        -moz-appearance: textfield;
+        appearance: textfield;
+      }
+      &::-webkit-inner-spin-button,
+      &::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+      }
+    }
+    &.warning {
+      outline-color: $colorWornings;
+      caret-color: $colorWornings;
+    }
+    &[type="reset"] {
+      background-color: $strongCyan;
+      color: $darkCyan;
+      opacity: 1;
+      text-transform: uppercase;
+      @extend %changeStyle;
+      &.empty {
+        outline-color: $darkCyan;
+        opacity: 0.3;
+      }
+    }
+  }
+}
+.select-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  @include responMedia(mobile) {
+    grid-template-columns: 1fr 1fr;
+  }
+  gap: 1rem;
+  input[type="button"] {
+    &.active {
+      background-color: $strongCyan;
+      color: $darkCyan;
+    }
+    background-color: $darkCyan;
+    @extend %changeStyle;
+  }
+}
+.result input[type="text"] {
+  &::placeholder {
+    color: $strongCyan;
+  }
+  background-color: transparent;
+  color: $strongCyan;
+  font-size: 2.5rem;
+}
+.bill input[type="number"] {
+  @extend %backgroundImage;
+  background-image: url("/src/assets/icon-dollar.svg");
+}
+.people-number input[type="number"] {
+  @extend %backgroundImage;
+  background-image: url("/src/assets/icon-person.svg");
+}
