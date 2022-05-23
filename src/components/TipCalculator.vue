@@ -86,7 +86,7 @@ export default {
       tips: [
         { value: 5, isActive: false },
         { value: 10, isActive: false },
-        { value: 15, isActive: true },
+        { value: 15, isActive: false },
         { value: 25, isActive: false },
         { value: 50, isActive: false },
       ],
